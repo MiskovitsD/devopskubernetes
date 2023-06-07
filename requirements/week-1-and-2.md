@@ -42,26 +42,24 @@ These steps should be done by you before starting the exercises - if these will 
   * It should open without issues, either create an account or skip that step - you should be able to create new requests/collections, and so on
   * If you can not open it, it means the Postman installation is not correct
 * Enter GitHub: https://github.com/ and create a new repository, which is set to private, and the Add a README file is ticked - the other values do not matter
-  * Like this: ![Example](/requirements/img/1-privaterepo.png)
+  * Like this: <img src='/requirements/img/1-privaterepo.png' width='600'>
 * Click on Code, and copy the URL
 * Open the Git graphical user interface you have chosen, find a button that says clone, paste the copied URL and hit go - if it says you require authentication, follow the instructions
-  * With GitHub Desktop, it can be found at the top-left corner:
-  ![Top-left corner, repository, Add, Clone repository](/requirements/img/1-clone.png)
+  * With GitHub Desktop, it can be found at the top-left corner: <img src='/requirements/img/1-clone.png' width='600'>
   * There should be no errors, you should see the newly created repository on your computer
   * If it fails, it can mean that the graphical user interface installation is not correct, or check that the authentication works fine
 
 # Helpful links
 
 How to set environment variables (in our case, JAVA_HOME) on your machine:
-* Windows: 
- * open the Start menu, and type in: environment variable (in Hungarian: környezeti változó)
- * open the result, and click on the environment variables button
- * You should see something like this: 
- ![Account level on top, system level on bottom](/requirements/img/1-env.png)
- * Add a new one to the top, account level ones, and enter the name and the value of the environment variable
+* Windows: follow the steps below
+  * open the Start menu, and type in: environment variable (in Hungarian: környezeti változó)
+  * open the result, and click on the environment variables button
+  * You should see something like this: <img src='/requirements/img/1-env.png' width='400'>
+  * Add a new one to the top, account level ones, and enter the name and the value of the environment variable
 * Linux and MacOS: https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/#persistent-environment-variables use the one that requires the modification of ~/.bashrc
 
 How to modify the PATH on your machine:
 * Windows: go to the same window as with the environment variables and modify the account level PATH variable
- * Add a new entry here: ![modifying the path](/requirements/img/1-path.png)
+  * Add a new entry here: <img src='/requirements/img/1-path.png' width='400'>
 * Linux and MacOS: do an environment variable setting as previously, and add something new to the path like this: `export PATH="$PATH:<path to add>"`
