@@ -2,6 +2,9 @@
 
 https://github.com/drsylent/cubix-cloudnative-example-springboot
 
+Take note, when you will create pull requests, the target branch should be the one in your forked repository,
+not the one from which you forked!
+
 # Upload artifact snippet (watch for indentation!)
 
 ```
