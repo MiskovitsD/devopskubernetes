@@ -1,0 +1,12 @@
+grafana:
+  enabled: false
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    podMonitorNamespaceSelector:
+      matchLabels:
+        monitoring: "true"
+    serviceMonitorNamespaceSelector:
+      matchLabels:
+        monitoring: "true"

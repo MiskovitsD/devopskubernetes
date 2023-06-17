@@ -1,19 +1,22 @@
 # Requirements
 For the third week’s exercises the following steps must be done before the start:
 * Install the kubectl CLI tool and add it to the PATH
-  * If you installed Docker Desktop on Windows, probably you already have it installed and added to the PATH - see below how to check
+  * If you installed Docker Desktop on Windows, probably you already have it installed and added to the PATH - see check section to see if this is the case for you
   * If not, you can download it from here: https://kubernetes.io/docs/tasks/tools/#kubectl - follow the instructions for your operating system
+  * Do not forget to add it to the PATH
 * Install the kind CLI tool and add it to the PATH
   * Follow one of the instructions listed here that seems good for you: https://kind.sigs.k8s.io/docs/user/quick-start/#installation
   * The release binaries can be the simplest way if you do not have any package managers: https://kind.sigs.k8s.io/docs/user/quick-start/#installing-from-release-binaries
+  * Do not forget to add it to the PATH
   * You do not have to create a cluster - we will create one by our own rules
 * Install the helm CLI tool and add it to the PATH
   * Follow one of the instructions listed here that seems good for you: https://helm.sh/docs/intro/install/
   * The first option, release binaries can be the simplest way if you do not have any package managers: https://helm.sh/docs/intro/install/#from-the-binary-releases
+  * Do not forget to add it to the PATH
 * You have to add two entries to your hosts file (see below for help about this)
   * `127.0.0.1 application.cubix.localhost`
   * `127.0.0.1 grafana.cubix.localhost`
-  * TODO a script is provided to you that does this automatically for you - you need administrator/root/sudo rights to run it
+  * You can do this manually, or by running the provided [script](/requirements/scripts/3-hosts-file-extending) - you need administrator/root/sudo rights to run it
 * Start Kubernetes cluster
   * there is a detailed description about this below, but first check the other tools
 
@@ -36,12 +39,22 @@ For the third week’s exercises the following steps must be done before the sta
 
 # Starting the Kubernetes cluster
 
-* TODO a script is provided to you that does this automatically for you
-* TODO a script was also provided for checking if it works fine - wait around 2 minutes before running it
+* Open a terminal / command-line prompt where cluster starting scripts are available for your platform (under requirements/scripts/3-cluster-start)
+  * for [Windows/PowerShell](/requirements/scripts/3-cluster-start/windows)
+  * for [Linux/MacOS/Shell](/requirements/scripts/3-cluster-start/macos-linux)
+* The `create` script will create and start up the cluster
+  * Note - from now on, up until you delete the cluster, it will start up together with Docker
+  * If all the above checks go well but this fails, please reach out to me
+* Wait a few minutes, then the `test` script will check if an example service can be created and called
+  * It will clean up everything needed for the test
+  * If it fails first, try again a bit later
+  * If all the above checks go well but this fails even after a first try and after 5 minutes, please reach out to me
 
 # Helpful links
 
 How to edit the hosts file:
+* Recommended for our training: use the provided script in the requirements/scripts/3-hosts-file-extending folder
+  * Has a different script for Windows and MacOS/Linux - use the appropriate one for your system
 * Windows: 
   * it can be found at `C:\Windows\System32\drivers\etc\hosts` location
   * you have to edit it with a program running with administrator rights

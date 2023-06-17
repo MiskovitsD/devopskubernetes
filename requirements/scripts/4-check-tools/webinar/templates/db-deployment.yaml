@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    {{- include "webinar.db.labels" . | nindent 4 }}
+  name: {{ include "webinar.fullname" . }}-db
+spec:
+  replicas: {{ .Values.db.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "webinar.db.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "webinar.db.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: LOGGING_PATTERN_LEVEL
+          value: "trace_id=%mdc{trace_id} span_id=%mdc{span_id} trace_flags=%mdc{trace_flags} %5p"
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ .Values.postgresql.auth.database }}
+        - name: SPRING_DATASOURCE_USERNAME
+          value: {{ .Values.postgresql.auth.username }}
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.postgresql.auth.existingSecret }}
+              key: password
+        - name: OTEL_SERVICE_NAME
+          value: {{ include "webinar.fullname" . }}-db
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: {{ .Values.db.config.openTelemetryTargetUrl }}
+        {{- if not .Values.api.metrics.openTelemetryEnabled }}
+        - name: OTEL_METRICS_EXPORTER
+          value: none
+        {{- end }}
+        image: {{ .Values.db.image }}
+        imagePullPolicy: Always
+        livenessProbe:
+          {{- if not .Values.spring.livenessProbe }}
+          tcpSocket:
+            port: http
+          {{- else }}
+          {{- toYaml .Values.spring.livenessProbe | nindent 10 }}
+          {{- end }}
+        readinessProbe:
+          {{- if not .Values.spring.readinessProbe }}
+          tcpSocket:
+            port: http
+          {{- else }}
+          {{- toYaml .Values.spring.readinessProbe | nindent 10 }}
+          {{- end }}
+        startupProbe:
+          {{- if not .Values.spring.startupProbe }}
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 20
+          {{- else }}
+          {{- toYaml .Values.spring.startupProbe | nindent 10 }}
+          {{- end }}
+        name: db
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 8081
+          name: management
+          protocol: TCP
+        resources:
+          {{- if not .Values.spring.resources }}
+          limits:
+            memory: 400Mi
+            cpu: 500m
+          requests:
+            memory: 400Mi
+            cpu: 100m
+          {{- else }}
+          {{- toYaml .Values.resources | nindent 10 }}
+          {{- end }}
+        securityContext:
+          privileged: false

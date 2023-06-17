@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "webinar.fullname" . }}-api
+  labels:
+    {{- include "webinar.api.labels" . | nindent 4 }}
+spec:
+  rules:
+    - host: application.cubix.localhost
+      http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ include "webinar.fullname" . }}-api
+                port:
+                  number: 8080

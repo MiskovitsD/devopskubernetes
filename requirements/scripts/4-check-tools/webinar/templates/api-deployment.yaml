@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    {{- include "webinar.api.labels" . | nindent 4 }}
+  name: {{ include "webinar.fullname" . }}-api
+spec:
+  replicas: {{ .Values.api.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "webinar.api.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "webinar.api.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: DB_MESSAGE_URL
+          value: {{ .Values.api.config.apiToDbTargetUrl }}
+        - name: LOGGING_PATTERN_LEVEL
+          value: "trace_id=%mdc{trace_id} span_id=%mdc{span_id} trace_flags=%mdc{trace_flags} %5p"
+        - name: OTEL_SERVICE_NAME
+          value: {{ include "webinar.fullname" . }}-api
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: {{ .Values.api.config.openTelemetryTargetUrl }}
+        {{- if not .Values.api.metrics.openTelemetryEnabled }}
+        - name: OTEL_METRICS_EXPORTER
+          value: none
+        {{- end }}
+        image: {{ .Values.api.image }}
+        imagePullPolicy: Always
+        livenessProbe:
+          {{- if not .Values.spring.livenessProbe }}
+          tcpSocket:
+            port: http
+          {{- else }}
+          {{- toYaml .Values.spring.livenessProbe | nindent 10 }}
+          {{- end }}
+        readinessProbe:
+          {{- if not .Values.spring.readinessProbe }}
+          tcpSocket:
+            port: http
+          {{- else }}
+          {{- toYaml .Values.spring.readinessProbe | nindent 10 }}
+          {{- end }}
+        startupProbe:
+          {{- if not .Values.spring.startupProbe }}
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 20
+          periodSeconds: 5
+          timeoutSeconds: 2
+          failureThreshold: 20
+          {{- else }}
+          {{- toYaml .Values.spring.startupProbe | nindent 10 }}
+          {{- end }}
+        name: api
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        - containerPort: 8081
+          name: management
+          protocol: TCP
+        resources:
+          {{- if not .Values.spring.resources }}
+          limits:
+            memory: 400Mi
+            cpu: 500m
+          requests:
+            memory: 400Mi
+            cpu: 100m
+          {{- else }}
+          {{- toYaml .Values.resources | nindent 10 }}
+          {{- end }}
+        securityContext:
+          privileged: false
