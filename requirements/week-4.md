@@ -9,8 +9,8 @@ For the fourth week’s exercises the following steps must be done before the st
 * Delete the previous Kubernetes cluster with: `kind delete cluster`
   * We do this so we have a clean, fresh state
 * Create the new cluster the same way as seen previous week (also check it the same way)
-* Two scripts were provided to run into the cluster - open a terminal in the folder for your platform (under /requirements/script/4-1-setup-tools)
-  * Has different scripts for [Windows](/requirements/script/4-1-setup-tools/windows) and [MacOS/Linux](/requirements/script/4-1-setup-tools/macos-linux) - use the appropriate one for your system
+* Two scripts were provided to run into the cluster - open a terminal in the folder for your platform (under /requirements/scripts/4-1-setup-tools)
+  * Has different scripts for [Windows](/requirements/scripts/4-1-setup-tools/windows) and [MacOS/Linux](/requirements/scripts/4-1-setup-tools/macos-linux) - use the appropriate one for your system
   * the `dependencies` must be run only if it was never run before (but running it multiple times do no harm)
   * the `install` one will setup everything needed in our cluster
 * Wait a few minutes. The tools must be set up manually, follow these instructions:
@@ -36,7 +36,7 @@ For the fourth week’s exercises the following steps must be done before the st
     * Save & Test (should display it is working)
 
 # Checking if everything is fine
-* Under /requirements/script/4-2-check-tools there are scripts for both [Windows](/requirements/script/4-2-check-tools/windows) and [MacOS/Linux](/requirements/script/4-2-check-tools/macos-linux) - open a terminal in the folder appropriate for your platform
+* Under /requirements/scripts/4-2-check-tools there are scripts for both [Windows](/requirements/scripts/4-2-check-tools/windows) and [MacOS/Linux](/requirements/scripts/4-2-check-tools/macos-linux) - open a terminal in the folder appropriate for your platform
 * The `deploy` script will deploy a test application to the cluster, run it
 * Wait about 2 minutes. The `test` script will call the test application, run it
   * Keep trying if it still replies with 503 or 500 error codes. If it is still not good after 5 minutes, please reach out to me.
