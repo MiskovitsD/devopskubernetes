@@ -16,7 +16,7 @@ For the third week’s exercises the following steps must be done before the sta
 * You have to add two entries to your hosts file (see below for help about this)
   * `127.0.0.1 application.cubix.localhost`
   * `127.0.0.1 grafana.cubix.localhost`
-  * You can do this manually, or by running the provided [script](/requirements/scripts/3-hosts-file-extending) - you need administrator/root/sudo rights to run it
+  * You can do this manually, or by running the provided [script](/requirements/scripts/3-1-hosts-file-extending) - you need administrator/root/sudo rights to run it
 * Start Kubernetes cluster
   * there is a detailed description about this below, but first check the other tools
 
@@ -39,9 +39,9 @@ For the third week’s exercises the following steps must be done before the sta
 
 # Starting the Kubernetes cluster
 
-* Open a terminal / command-line prompt where cluster starting scripts are available for your platform (under requirements/scripts/3-cluster-start)
-  * for [Windows/PowerShell](/requirements/scripts/3-cluster-start/windows)
-  * for [Linux/MacOS/Shell](/requirements/scripts/3-cluster-start/macos-linux)
+* Open a terminal / command-line prompt where cluster starting scripts are available for your platform (under requirements/scripts/3-2-cluster-start)
+  * for [Windows/PowerShell](/requirements/scripts/3-2-cluster-start/windows)
+  * for [Linux/MacOS/Shell](/requirements/scripts/3-2-cluster-start/macos-linux)
 * The `create` script will create and start up the cluster
   * Note - from now on, up until you delete the cluster, it will start up together with Docker
   * If all the above checks go well but this fails, please reach out to me
@@ -53,8 +53,9 @@ For the third week’s exercises the following steps must be done before the sta
 # Helpful links
 
 How to edit the hosts file:
-* Recommended for our training: use the provided script in the requirements/scripts/3-hosts-file-extending folder
+* Recommended for our training: use the provided script in the requirements/scripts/3-1-hosts-file-extending folder
   * Has a different script for Windows and MacOS/Linux - use the appropriate one for your system
+  * If this does not work, reach out to me or try it manually, as described below
 * Windows: 
   * it can be found at `C:\Windows\System32\drivers\etc\hosts` location
   * you have to edit it with a program running with administrator rights
