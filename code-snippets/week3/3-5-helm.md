@@ -1,5 +1,10 @@
 # Image to use for starting
 
+Replace the USERNAME with your GitHub account's name in the repository.
+
+This is what I copied, but the correct way does not have the actions tag in the repository field, rather
+the actions in the tag field.
+
 ```
 image:
   repository: ghcr.io/USERNAME/cubix/cloudnative/demo:actions
