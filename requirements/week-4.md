@@ -9,6 +9,10 @@ For the fourth week’s exercises the following steps must be done before the st
 * Delete the previous Kubernetes cluster with: `kind delete cluster`
   * We do this so we have a clean, fresh state
 * Create the new cluster the same way as seen previous week (also check it the same way)
+* Create a namespace different from the `default`, and set it as a default for the kubectl
+  * `kubectl create namespace home`
+  * `kubectl config set-context --current --namespace=home`
+  * Check with `kubectl get all` - you should get a message, like "No resources found in home namespace"
 * Two scripts were provided to run into the cluster - open a terminal in the folder for your platform (under /requirements/scripts/4-1-setup-tools)
   * Has different scripts for [Windows](/requirements/scripts/4-1-setup-tools/windows) and [MacOS/Linux](/requirements/scripts/4-1-setup-tools/macos-linux) - use the appropriate one for your system
   * the `dependencies` must be run only if it was never run before (but running it multiple times do no harm)
