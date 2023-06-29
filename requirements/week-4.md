@@ -34,7 +34,7 @@ For the fourth week’s exercises the following steps must be done before the st
   * Modify the Loki data source
     * Derived fields, Add
       * Name: `TraceID`
-      * Regex: `trace_id=(\S*)`
+      * Regex: `"trace_id":"([\w\d]*)"`
       * Query: `${__value.raw}`
       * Internal link: Tempo
     * Save & Test (should display it is working)
