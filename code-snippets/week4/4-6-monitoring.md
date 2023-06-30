@@ -22,3 +22,7 @@ management.endpoints.web.exposure.include=health,prometheus
 ```
 increase(http_server_requests_seconds_count{namespace="cubix", container="api", outcome="SERVER_ERROR"}[1m])
 ```
+
+# Location of dashboard
+
+[Download or copy from here](/code-snippets/week4/files/spring-boot-statistics.json)
