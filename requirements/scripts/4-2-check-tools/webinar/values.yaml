@@ -31,7 +31,7 @@ api:
     openTelemetryTargetUrl: http://tempo.tools:4317
   metrics:
     openTelemetryEnabled: false
-  image: ghcr.io/drsylent/webinar/api:opentelemetry
+  image: ghcr.io/drsylent/cubix/webinar/api:json
   service:
     type: ""
 
@@ -41,7 +41,7 @@ db:
     openTelemetryTargetUrl: http://tempo.tools:4317
   metrics:
     openTelemetryEnabled: false
-  image: ghcr.io/drsylent/webinar/db:opentelemetry
+  image: ghcr.io/drsylent/cubix/webinar/db:json
   service:
     type: ""
 

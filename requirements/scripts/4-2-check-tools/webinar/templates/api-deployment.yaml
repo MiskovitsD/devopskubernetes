@@ -18,8 +18,6 @@ spec:
       - env:
         - name: DB_MESSAGE_URL
           value: {{ .Values.api.config.apiToDbTargetUrl }}
-        - name: LOGGING_PATTERN_LEVEL
-          value: "trace_id=%mdc{trace_id} span_id=%mdc{span_id} trace_flags=%mdc{trace_flags} %5p"
         - name: OTEL_SERVICE_NAME
           value: {{ include "webinar.fullname" . }}-api
         - name: OTEL_EXPORTER_OTLP_ENDPOINT
