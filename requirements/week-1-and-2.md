@@ -1,7 +1,8 @@
 # Requirements
 For the first and second week’s exercises the following steps must be done before the start:
-* Install Postman (https://www.postman.com/downloads/)
-  * It is not necessary to create an account
+* Only on Windows, you have to enable running PowerShell scripts - see below for a detailed description, how to do this
+* Install Postman (https://www.postman.com/downloads/) if you have no problem registering to their service
+  * Otherwise I recommend using Insomnia (https://insomnia.rest/download), which does not require registration - about its usage, see the video
 * Install Git (https://git-scm.com/downloads)
 * Add the git command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/cmd
@@ -20,6 +21,36 @@ For the first and second week’s exercises the following steps must be done bef
 * Have a command-line / terminal that is comfortable for you ready
   * On Windows it is highly recommend to use PowerShell instead of the conventional cmd tool
   * On Windows it is recommended to use Windows Terminal (https://www.microsoft.com/store/productId/9N0DX20HK701)
+
+# Enable running PowerShell scripts on Windows
+
+By default on Windows one can not run PowerShell scripts (.ps1 files) due to security risks, see [here](https:/go.microsoft.com/fwlink/?LinkID=135170). 
+However for this training we have some scripts that will be required for us. Below I list a few options, what can you do. 
+You must enter these commands in a PowerShell terminal (can be also from Windows Terminal).
+
+## Enable running all the scripts
+
+If you are not afraid of the security risks of running scripts, you can enable running any scripts for your Windows user:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+```
+
+If you would like to reset this later on, enter:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
+```
+
+## Enable running scripts for the current terminal session
+
+This command will enable running scripts only for the current terminal session - if you open a new window, you have to enter this again:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+```
+
+If you close the window, this setting will be gone.
 
 # Checking if everything is fine
 These steps should be done by you before starting the exercises - if these will work as expected, no problem should occur during the exercise.
