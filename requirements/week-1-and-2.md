@@ -2,7 +2,7 @@
 For the first and second week’s exercises the following steps must be done before the start:
 * Only on Windows, you have to enable running PowerShell scripts - see below for a detailed description, how to do this
 * Install Postman (https://www.postman.com/downloads/) if you have no problem registering to their service
-  * Otherwise I recommend using Insomnia (https://insomnia.rest/download), which does not require registration - about its usage, see the video
+  * Otherwise I recommend using Bruno (https://www.usebruno.com/downloads), which does not require registration - about its usage, see the video
 * Install Git (https://git-scm.com/downloads)
 * Add the git command-line tool to the PATH if it was not done by the installer
   * The folder to add: <path of the installation>/cmd
