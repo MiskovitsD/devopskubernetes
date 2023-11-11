@@ -69,9 +69,9 @@ These steps should be done by you before starting the exercises - if these will 
 * Enter the following command: `docker run --rm hello-world`
   * It should write out a hello text message
   * If this fails, it means that maybe you did not start the Docker Desktop / Daemon beforehand, the Docker installation is not correct, or docker is not added to the PATH
-* Open the installed Postman application
-  * It should open without issues, either create an account or skip that step - you should be able to create new requests/collections, and so on
-  * If you can not open it, it means the Postman installation is not correct
+* Open the installed Postman or Bruno application
+  * It should open without issues - for Postman you will need to create an account to use the functionality we will need
+  * If you can not open it, it means the Postman or Bruno installation is not correct
 * Enter GitHub: https://github.com/ and create a new repository, which is set to private, and the Add a README file is ticked - the other values do not matter
   * Like this: <img src='/requirements/img/1-privaterepo.png' width='600'>
 * Click on Code, and copy the URL
