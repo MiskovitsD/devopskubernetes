@@ -18,6 +18,8 @@ spec:
       - env:
         - name: DB_MESSAGE_URL
           value: {{ .Values.api.config.apiToDbTargetUrl }}
+        - name: SPRING_PROFILES_ACTIVE
+          value: cloud
         - name: OTEL_SERVICE_NAME
           value: {{ include "webinar.fullname" . }}-api
         - name: OTEL_EXPORTER_OTLP_ENDPOINT

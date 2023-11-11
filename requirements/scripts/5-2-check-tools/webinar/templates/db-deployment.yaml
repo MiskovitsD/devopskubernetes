@@ -16,6 +16,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: cloud
         - name: SPRING_DATASOURCE_URL
           value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ .Values.postgresql.auth.database }}
         - name: SPRING_DATASOURCE_USERNAME
