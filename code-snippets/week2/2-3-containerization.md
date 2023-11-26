@@ -32,6 +32,10 @@ quay.io/drsylent/cloud-native-db-demo:springboot3
 
 http://localhost:8080/visit
 
+# Repository for EXPOSE testing
+
+https://github.com/drsylent/cubix-cloudnative-example-springboot
+
 # Repository to clone for build context training
 
 https://github.com/drsylent/cubix-cloudnative-example-buildcontext
