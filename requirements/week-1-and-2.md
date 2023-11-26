@@ -22,6 +22,15 @@ For the first and second week’s exercises the following steps must be done bef
   * On Windows it is highly recommend to use PowerShell instead of the conventional cmd tool
   * On Windows it is recommended to use Windows Terminal (https://www.microsoft.com/store/productId/9N0DX20HK701)
 
+# Recommendations
+
+The training's materials were created in a way that you will not need any special IDE or text editor.
+However I do recommend using Visual Studio Code (https://code.visualstudio.com/), as it is can give you hints, linting and tips for the files that we will edit.
+
+Recommended extensions for VS Code are:
+* Docker
+* Kubernetes (it will install YAML also)
+
 # Enable running PowerShell scripts on Windows
 
 By default on Windows one can not run PowerShell scripts (.ps1 files) due to security risks, see [here](https:/go.microsoft.com/fwlink/?LinkID=135170). 
