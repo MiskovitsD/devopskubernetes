@@ -1,6 +1,6 @@
 # Management (health checking) dependency to pom.xml
 
-```
+```xml
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -11,7 +11,7 @@
 
 Put this into src/main/resources/application.properties:
 
-```
+```properties
 management.health.probes.enabled=true
 ```
 
@@ -23,7 +23,7 @@ http://localhost:8082/actuator
 
 For API application, in local-app/app-start script:
 
-```
+```shell
 -Dmanagement.server.port=9082
 ```
 
@@ -33,7 +33,7 @@ In Windows, put it between quotation marks: `"-Dmanagement.server.port=9082"`
 
 Put this into src/main/resources/application.properties only for the DB application:
 
-```
+```properties
 management.endpoint.health.group.readiness.include=db
 ```
 
@@ -41,14 +41,14 @@ management.endpoint.health.group.readiness.include=db
 
 Management port setting for application:
 
-```
+```yaml
           - name: MANAGEMENT_SERVER_PORT
             value: "9080"
 ```
 
 Setting management port as a named port:
 
-```
+```yaml
             - name: management
               containerPort: 9080
               protocol: TCP
@@ -56,7 +56,7 @@ Setting management port as a named port:
 
 HTTP GET probe setting:
 
-```
+```yaml
             httpGet:
               port: management
               path: /actuator/health/liveness

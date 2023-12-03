@@ -1,6 +1,6 @@
 # Monitoring dependency to pom.xml
 
-```
+```xml
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
@@ -13,7 +13,7 @@
 
 Put this into src/main/resources/application.properties:
 
-```
+```properties
 management.endpoints.web.exposure.include=health,prometheus
 ```
 

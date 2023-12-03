@@ -11,7 +11,7 @@ https://www.yamllint.com/
 
 https://kubernetes.io/docs/concepts/workloads/pods/#using-pods
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -26,7 +26,7 @@ spec:
 
 https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -51,7 +51,7 @@ http://localhost:9090
 
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -83,7 +83,7 @@ http://localhost:9090
 
 https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource
 
-```
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -116,14 +116,14 @@ There is a difference here between PowerShell and Shell - how to escape a specia
 
 PowerShell:
 
-```
+```powershell
 kubectl exec deploy/nginx -- echo `$KUBERNETES_PORT
 kubectl exec deploy/nginx -- sh -c "echo `$KUBERNETES_PORT"
 ```
 
 Bash/Shell:
 
-```
+```shell
 kubectl exec deploy/nginx -- echo \$KUBERNETES_PORT
 kubectl exec deploy/nginx -- sh -c "echo \$KUBERNETES_PORT"
 ```

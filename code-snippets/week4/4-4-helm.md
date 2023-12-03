@@ -2,10 +2,11 @@
 
 Replace the USERNAME with your GitHub account's name in the repository.
 
-This is what I copied, but the correct way does not have the actions tag in the repository field, rather
-the actions in the tag field.
+This is what I copied initially, 
+but the correct way does not have the tag (`actions`) in the repository field, rather
+in the tag field at the bottom (where the value is currently `demo`).
 
-```
+```yaml
 image:
   repository: ghcr.io/USERNAME/cubix/cloudnative/demo:actions
   pullPolicy: IfNotPresent
@@ -33,7 +34,7 @@ https://github.com/bitnami/charts/tree/main/bitnami/postgresql/
 
 # DB image values
 
-```
+```yaml
 image:
   repository: quay.io/drsylent/cloud-native-db-demo
   pullPolicy: IfNotPresent
@@ -43,7 +44,7 @@ image:
 
 # Environment variables
 
-```
+```yaml
           env:
           - name: SPRING_DATASOURCE_URL
             value: jdbc:postgresql://postgres-postgresql.helm-db:5432/postgres
@@ -59,7 +60,7 @@ https://helm.sh/docs/chart_template_guide/builtin_objects/
 
 # Environment variable setting for turning of Spring banner
 
-```
+```yaml
 env:
 - name: SPRING_MAIN_BANNER-MODE
   value: off
@@ -67,7 +68,7 @@ env:
 
 # Setting values in command line for the database
 
-```
+```shell
 --set postgresql.auth.database=db --set postgresql.auth.username=user --set postgresql.auth.password=password
 ```
 

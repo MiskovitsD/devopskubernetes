@@ -7,7 +7,7 @@ not the one from which you forked!
 
 # Upload artifact snippet (watch for indentation!)
 
-```
+```yaml
     - name: Upload artifact for Docker job
       uses: actions/upload-artifact@v3
       with:
@@ -17,7 +17,7 @@ not the one from which you forked!
 
 # Download artifact snippet (watch for indentation!)
 
-```
+```yaml
     - name: Download artifact from maven job
       uses: actions/download-artifact@v3
       with:

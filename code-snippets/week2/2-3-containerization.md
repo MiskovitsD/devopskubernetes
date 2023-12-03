@@ -12,13 +12,13 @@ ghcr.io/USERNAME/cubix/cloudnative/demo:actions
 
 # Postgres environment variables
 
-```
+```shell
 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password
 ```
 
 # Spring Boot database environment variables
 
-```
+```shell
 -e SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres -e SPRING_DATASOURCE_USERNAME=user -e SPRING_DATASOURCE_PASSWORD=password
 ```
 

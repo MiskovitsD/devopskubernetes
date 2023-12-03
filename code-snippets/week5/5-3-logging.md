@@ -4,7 +4,7 @@ http://grafana.cubix.localhost:8080
 
 # JSON logging dependency to pom.xml
 
-```
+```xml
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
