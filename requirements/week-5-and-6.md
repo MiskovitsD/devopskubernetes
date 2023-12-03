@@ -3,6 +3,9 @@
 A video for showing the installation and the checking is available. Below you can see a written version of this 
 (including links and other useful items to copy-paste).
 
+Note that the scripts’ locations seen in the video changed from _4-1-setup-tools_ and _4-2-check-tools_ 
+to **5-1-setup-tools** and **5-2-check-tools**.
+
 # Requirements
 For the fifth week’s exercises the following steps must be done before the start:
 * It is required to still have the same hosts file setting as previously
