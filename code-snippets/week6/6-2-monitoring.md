@@ -19,7 +19,7 @@ management.endpoints.web.exposure.include=health,prometheus
 
 # Location of dashboard
 
-[Download or copy from here](/code-snippets/week4/files/spring-boot-statistics.json)
+[Download or copy from here](/code-snippets/week6/files/spring-boot-statistics.json)
 
 # Alerting query
 
