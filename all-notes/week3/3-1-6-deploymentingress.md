@@ -33,7 +33,7 @@ Create a Service - this can be done not just with a YAML and create Service comm
 
 Check the created Service: `kubectl describe svc/nginx` The label should be also there (app=nginx).
 
-Port forward it and check: `kubectl port-forward svc/nginx 9080:80` http://localhost:9090
+Port forward it and check: `kubectl port-forward svc/nginx 9080:80` http://localhost:9080
 
 # Use an Ingress to reach the application
 
