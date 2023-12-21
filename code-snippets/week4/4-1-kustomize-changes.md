@@ -60,3 +60,29 @@ This is deprecated, and now it is recommended to add this to the resources:
 resources:
 - ../../base
 ```
+
+## Using JSON6902 patches
+
+For testing out JSON6902 (more advanced) patching, we use the following to add a new path to our Ingress:
+
+```yaml
+patchesJson6902:
+- path: patch.yaml
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: example
+```
+
+This is deprecated, and now it is recommended to simply add this to the patches section (additional patches are not shown here):
+
+```yaml
+patches:
+- path: patch.yaml
+  target:
+    group: networking.k8s.io
+    version: v1
+    kind: Ingress
+    name: example
+```
