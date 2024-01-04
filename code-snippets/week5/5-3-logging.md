@@ -15,4 +15,4 @@ http://grafana.cubix.localhost:8080
 
 # logback.xml to use
 
-[Download](/code-snippets/week4/files/logback.xml) and put to src/main/resources for both applications.
+[Download](/code-snippets/week5/files/logback.xml) and put to src/main/resources for both applications.
